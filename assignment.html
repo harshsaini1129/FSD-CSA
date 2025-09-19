@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Counter App</title>
+    <style>
+      h2 {
+        text-align: center;
+      }
+      #counter,
+      #message {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img src="download.jpeg" alt="" style="width: 40px; height: 40px; border-radius: 50%" />
+      <h2>Counter App</h2>
+
+      <div id="counter">0</div>
+      <div id="message"></div>
+
+      <div class="buttons" style="text-align: center">
+        <button onclick="increase()">+</button>
+        <button onclick="decrease()">-</button>
+      </div>
+    </div>
+
+    <script>
+      let counter = 0;
+      const Counter = document.getElementById("counter");
+      const Message = document.getElementById("message");
+      const MIN = 0;
+      const MAX = 10;
+
+      function increase() {
+        if (counter < MAX) {
+          counter++;
+          Message.textContent = "";
+        } else {
+          Message.textContent = "Max limit reached";
+        }
+        Counter.textContent = counter;
+      }
+
+      function decrease() {
+        if (counter > MIN) {
+          counter--;
+          Message.textContent = "";
+        } else {
+          Message.textContent = "Min. limit reached";
+        }
+        Counter.textContent = counter;
+      }
+    </script>
+  </body>
+</html>
